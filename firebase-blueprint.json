@@ -1,0 +1,39 @@
+{
+  "entities": {
+    "properties": {
+      "title": "Properties",
+      "description": "Exclusive real estate listings for Criciúma and Balneário Rincão",
+      "type": "object",
+      "properties": {
+        "code": { "type": "string" },
+        "title": { "type": "string" },
+        "slug": { "type": "string" },
+        "price": { "type": "number" },
+        "type": { "type": "string" },
+        "city": { "type": "string" },
+        "neighborhood": { "type": "string" },
+        "bedrooms": { "type": "number" },
+        "suites": { "type": "number" },
+        "privateArea": { "type": "number" },
+        "isBankFinancing": { "type": "boolean" },
+        "isFeatured": { "type": "boolean" },
+        "isDeleted": { "type": "boolean" }
+      },
+      "required": ["code", "title", "price", "city", "neighborhood"]
+    },
+    "leads": {
+      "title": "Leads",
+      "description": "Interested buyer inquiries and visit bookings",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "propertyId": { "type": "string" },
+        "type": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["name", "phone"]
+    }
+  }
+}

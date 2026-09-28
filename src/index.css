@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #faf9f6;
+    color: #1e293b;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom smooth scroll */
+html {
+  scroll-behavior: smooth;
+  background-color: #faf9f6;
+}
+
+/* Glassmorphism luxury light panel */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.08);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.glass-card-dark {
+  background: rgba(18, 18, 18, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #926612 0%, #d4af37 45%, #78350f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #d4af37 0%, #c59b27 50%, #a67c13 100%);
+}
+
+.gold-border {
+  border-color: rgba(184, 134, 11, 0.35);
+}
+
+/* High performance GPU smooth transitions (never causes layout reflows) */
+.gpu-smooth {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+.hover-lift {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px) translateZ(0);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f0ea;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cfc9b6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b5ad96;
+}
+
+/* Calligraphy & Handwriting Fonts */
+.font-handwriting {
+  font-family: 'Great Vibes', cursive;
+}
+
+.font-pinyon {
+  font-family: 'Pinyon Script', cursive;
+}
+
+/* Subtle Animated Shimmer & Pen Writing Effects */
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    #cf9b2a 0%,
+    #fcedaa 25%,
+    #ffffff 50%,
+    #fcedaa 75%,
+    #b38118 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldShimmer 3.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1) translateZ(0);
+    opacity: 0.85;
+    filter: drop-shadow(0 0 10px rgba(245, 197, 66, 0.8));
+  }
+  50% {
+    transform: scale(1.18) translateZ(0);
+    opacity: 1;
+    filter: drop-shadow(0 0 20px rgba(255, 235, 150, 1));
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes drawPath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-draw-stroke {
+  animation: drawPath 3.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes cinematicExpand {
+  0% {
+    letter-spacing: 0.1em;
+    opacity: 0;
+    transform: translateY(10px) translateZ(0);
+  }
+  100% {
+    letter-spacing: 0.35em;
+    opacity: 1;
+    transform: translateY(0) translateZ(0);
+  }
+}
+
+.animate-expand-sub {
+  animation: cinematicExpand 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Pulse beacon for live badge */
+@keyframes livePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(234, 179, 8, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(234, 179, 8, 0);
+  }
+}
+
+.beacon-pulse {
+  animation: livePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

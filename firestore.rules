@@ -1,0 +1,25 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Properties collection: Real-time synchronization for all property operations
+    match /properties/{propertyId} {
+      allow read, write: if true;
+    }
+
+    // Leads & visit requests collection
+    match /leads/{leadId} {
+      allow read, write: if true;
+    }
+
+    // Portal custom texts and broker contact settings
+    match /portal_content/{contentId} {
+      allow read, write: if true;
+    }
+
+    // AI-generated landing pages and ad copy
+    match /ai_landing_pages/{pageId} {
+      allow read, write: if true;
+    }
+  }
+}

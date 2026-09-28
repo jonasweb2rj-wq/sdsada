@@ -1,0 +1,6 @@
+{
+  "name": "Maria Júlia | Corretora de Imóveis CRECI 77301-F",
+  "description": "Portal imobiliário exclusivo de Maria Júlia Corretora em Criciúma e Balneário Rincão - SC. Imóveis selecionados, alto padrão, financiamento facilitado e consultoria de investimentos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
